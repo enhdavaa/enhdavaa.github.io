@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8"
+    <style>
+    </style>
+</head>
+<body>
+    <button onclick="changeBackground()">change background</button>
+    <input id="a1">
+    <button onclick="addColor()">add color</button>
+    <script>
+        var body = document.body
+        var colors
+         = ["black","green","aqua"]
+        var count = 0
+        var colorInput = document.getElementById("colorsInput")
+            function changeBackground() {
+                document.body.style.backgroundColor = colors[count]
+                count++
+                if(count == colors.length){
+                    count = 0
+                }
+            }
+            var addColor
+            var colorInput = document.getElementById("a1")
+                function addcolor() {
+                    document.body.style.addcolor = colors[count]
+                }
+    </script>
+</body>
+</html>
