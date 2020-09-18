@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/website.css">
+</head>
+<body style="margin: 600px; background-color: aquamarine;">
+    <div class="menu">
+        <div class="taniltsuulga">
+            <ul>
+                <li><a href="website1.html">asdq</a></li>
+                <li><a href="website.html">нүүр</a></li>
+                <li><a href="website2.html">танилцуулга</a></li>
+                <li><a href="website3.html">сургууль</a></li>
+                <li><a href="website4.html">бүтээлүүд</a></li>
+                <li class="dugaar"><a href="#">утас 88948589</a></li>
+            </ul>
+        </div>
+    </div>
+    <button onclick="decrease()">-</button>
+    <input type="number">
+    <button onclick="increase()">+</button>
+    <button>reset</button>
+    <div>0</div>
+    <button onclick="goBack()">Go Back</button>
+    <script>
+        var myInput = document.getElementsByTagName("input")[0]
+           var myDiv = document.getElementsByTagName("div")[0]
+        function decrease(){
+            if(myInput.value == "") {
+                myDiv.innerHTML--
+            }else{
+                myDiv.innerHTML = myDiv.innerHTML - myInput.value
+            }
+        }
+        function increase() {
+            if(myInput.value == "") {
+                myDiv.innerHTML++
+            }else{
+                myDiv.innerHTML = Number(myDiv.innerHTML) + Number(myInput.value)
+            }
+        }
+        function reset() {
+            myDiv.innerHTML = 0
+        }
+        var myIncButton = document.getElementsByTagName("button")[1]
+        myIncButton.onclick = increase
+        var myResetButton = document.getElementsByTagName("button")[2]
+        myResetButton.addEventListener("click",reset)
+        function goBack() {
+         window.history.back()
+        }
+    </script>
+</body>
+</html>
