@@ -1,0 +1,93 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ddsafsaf</title>
+</head>
+<body>
+    <div id="display">00:00:00</div>
+    <button onclick="toggleStart()">start</button>
+    <button onclick="reset()">reset</button>
+    <button onclick="lap()" dis>lap</button>
+    <div id="laps">
+      
+    </div>
+    <script>
+        var display = document.querySelector("#display")
+        var startStopButton = document.querySelector("button")
+        var lapButton = document.querySelectorAll("button")[2]
+        var minute = 0
+        var seconds = 0 
+        var doli = 0 
+        var displayMinute
+        var displaySeconds
+        var displayDoli
+        var isPause = true
+        var intervalId
+        var laps = document.querySelector("#laps")
+        var lapNumber = 1
+        function toggleStart() {
+            if (isPause){
+                startStopButton.innerHTML = "Stop"
+                intervalId = setInterval(run,10)
+                lapButton.disabled = false
+            }
+    else{
+        startStopButton.innerHTML = "start"
+        clearInterval(intervalId)
+        lapButton.disabled = true
+    }
+    isPause = !isPause
+}
+
+function run(){
+    doli++
+    if(doli == 100){
+        seconds++
+        doli = 0
+    }
+    if(seconds == 60){
+        minute++
+        seconds = 0
+    }
+    if(seconds < 10){
+        displaySeconds = "0"+seconds
+    }
+    else{
+        displaySeconds=seconds
+    }
+    if(minute < 10){
+        displayMinute= "0"+minute
+    }
+    else{
+        displayMinute = minute
+    }
+    if(doli < 10){
+        displayDoli = "0"+doli
+    }
+    else{
+        displayDoli = doli
+    }
+
+    display.innerHTML = displayMinute + ":" + displaySeconds + ":" + displayDoli
+}
+
+function reset() {
+    display.innerHTML = "00:00:00"
+    minute = 0 
+    seconds = 0
+    doli = 0
+    if(!isPause){
+        toggleStart()
+    }
+}
+function lap() {
+    var lapNo = document.createElement("div")
+    var lapTime = document.createElement("div")
+    lapNo.innerHTML = lapNumber
+    lapTime.innerHTML = displayMinute + ":" + displaySeconds + ":" + displayDoli
+    laps.append(lapNo,lapTime)
+    lapNumber++
+}
+    </script>
+</body>
+</html>
