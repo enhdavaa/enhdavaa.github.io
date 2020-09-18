@@ -1,0 +1,76 @@
+
+ <!DOCTYPE html>
+ <html>
+     <head>
+        <meta charset="utf-8"> 
+        <title>ToDo List</title>
+        <style>
+            body{
+                margin: 30px 380px;
+                padding: 0;
+            }
+            .container{
+                background-color: aqua;
+                padding: 5px;
+                width: 300px;
+                height: 400px;
+            }
+            .container input{
+                padding: 20px;
+            }
+            .container button{
+                padding: 20px;
+            }
+            .container2{
+                margin: 10px 0;
+                width: 300px;
+                height: 320px;
+                background-color: blueviolet;
+            }
+            .container2 button{
+                padding: 2px;
+            }
+        </style>
+     </head>
+     <body>
+        <div class="container" id="container"><!--Энэ нь бүхнийг агуулах том div байх болно.-->
+            <input type="text" placeholder="                                  Add list" id="myinput"><!--//myinput.value-г эндээс авна.-->
+            <button onclick="getList()" class="addbut">Add</button><!--//Энэ button дарагдах үед function ажиллаж утга авах болно.-->
+            <div class="container2" id="container2">
+                <div style="font-size: 5px; display: none;">-</div>
+                <div style="display: none;">safasf</div>
+                <button style="font-size: 5px; display: none;">-</button>
+                <div style="display: none;">fsafsa</div>
+                <button style="font-size: 5px; display: none;">-</button>
+    
+            </div>
+        </div>
+         <script>
+             var container = document.getElementById("container2");
+             var myinput;
+             var mylist;
+             function getList(){
+                 myinput = document.getElementById("myinput").value;
+                 if(myinput == ""){
+                     alert("Хоосон байна!");
+                 }
+                 else if(myinput !== ""){
+                    mylist = myinput;
+                    var newdiv = document.createElement("div");
+                    var newbutton = document.createElement("button");
+                    newbutton.innerHTML = "-";
+                    newbutton.style.fontSize = "20px";
+                    newdiv.innerHTML = mylist;
+                    container.append(newdiv, newbutton);
+                    document.getElementById("myinput").value = "";
+                 }
+                    newbutton.onclick = function(){
+                        newbutton.style.display = "none";
+                        newdiv.style.display = "none";
+                    };
+                 
+             }
+             
+         </script>
+     </body>
+ </html>
