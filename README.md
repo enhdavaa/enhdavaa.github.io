@@ -23,10 +23,11 @@
 <body>
     <div class="menuE">
         <div class="center">
-            <ul>
-                <p>анги:sw-0501</p>
-                <p>нэр:Э.Энхдаваа</p>
-                <a href="website.html">нэвтрэх</a>
+          <ul>
+            <p>анги:sw-0501</p>
+            <p>нэр:Э.Энхдаваа</p>
+            <a href="website.html">нэвтрэх</a>
+          </ul>
         </div>
     </div>
 </body>
